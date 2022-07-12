@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+dist/
+*.egg-info/
+
+# Environment
+*.env
+
+# Secret
+*.decrypted
+*.unencrypted
+
+# IDE
+.vscode/
