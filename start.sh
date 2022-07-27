@@ -7,4 +7,4 @@ set -e
 # alembic upgrade head
 
 # Start Server
-gunicorn app.main:wsgi_app --reload
+gunicorn app.main_wsgi:wsgi_app --reload
