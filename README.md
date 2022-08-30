@@ -1,6 +1,9 @@
 # REST API Template
 
-The stack:
+The first go to develop restfull backend using FastAPI.
+
+
+# 🛠 The Stack
 - [Poetry](https://python-poetry.org/) for environment and package management,
 - [FastAPI](https://fastapi.tiangolo.com/) for the framework,
 - [SQLAlchemy](https://docs.sqlalchemy.org/) for database ORM,
@@ -11,3 +14,17 @@ The stack:
 - [pre-commit](https://pre-commit.com/) with:
     - [Black](https://black.readthedocs.io/) for code formatter,
     - [MyPy](https://mypy.readthedocs.io/) for type checker.
+
+
+# 📝 TODO
+- user auth
+  - user model
+  - user migration
+  - jwt auth
+  - login / logout
+- user management
+  - crud
+- docs
+- code templates
+  - generate with script
+- data model to migration script
