@@ -6,6 +6,8 @@ The first go to develop restfull backend using FastAPI.
 # 🛠 The Stack
 - [Poetry](https://python-poetry.org/) for environment and package management,
 - [FastAPI](https://fastapi.tiangolo.com/) for the framework,
+    - [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation/serializer/typing,
+    - [Swagger UI](https://github.com/swagger-api/swagger-ui) for API documentation and testing,
 - [SQLAlchemy](https://docs.sqlalchemy.org/) for database ORM,
 - [Alembic](https://alembic.sqlalchemy.org/) for database migration,
 - [PyTest](https://docs.pytest.org/) for testing,
@@ -18,13 +20,13 @@ The first go to develop restfull backend using FastAPI.
 
 # 📝 TODO
 - user auth
-  - user model
-  - user migration
-  - jwt auth
-  - login / logout
+    - user model
+    - user migration
+    - jwt auth
+    - login / logout
 - user management
-  - crud
+    - crud
 - docs
 - code templates
-  - generate with script
+    - generate with script
 - data model to migration script
