@@ -3,7 +3,7 @@
 The first go to develop restfull backend using FastAPI.
 
 
-# 🛠 The Stack
+## 🛠 The Stack
 - [Poetry](https://python-poetry.org/) for environment and package management,
 - [FastAPI](https://fastapi.tiangolo.com/) for the framework,
     - [Pydantic](https://pydantic-docs.helpmanual.io/) for data validation/serializer/typing,
@@ -18,7 +18,7 @@ The first go to develop restfull backend using FastAPI.
     - [MyPy](https://mypy.readthedocs.io/) for type checker.
 
 
-# 📝 TODO
+## 📝 TODO
 - user auth
     - user model
     - user migration
@@ -30,3 +30,8 @@ The first go to develop restfull backend using FastAPI.
 - code templates
     - generate with script
 - data model to migration script
+
+
+## 📚 Documentation
+
+[The docs](./DOCS.md).
