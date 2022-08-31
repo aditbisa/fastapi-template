@@ -34,3 +34,13 @@
     ```
     poetry add <python-library>
     ```
+
+
+## 🌲 File Hierarchy
+
+To avoid circular dependencies, here's a guide line of the file hierarchy:
+- /config.py
+- /utils.py
+- /database.py ; /models.py ; /schemas/*
+- /services/*
+- /routers/*
