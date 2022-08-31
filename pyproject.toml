@@ -8,6 +8,7 @@ authors = ["Aditya Ghaffar <adit.bisa@gmail.com>"]
 python = "^3.8"
 fastapi = "^0.78.0"
 a2wsgi = "^1.4.1"
+python-multipart = "^0.0.5"
 
 [tool.poetry.dev-dependencies]
 gunicorn = "^20.1.0"
