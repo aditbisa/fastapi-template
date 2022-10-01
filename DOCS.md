@@ -31,8 +31,12 @@
 ## 📦 Packages
 
 - Add new python package into project
+    
+    Poetry tend to upgrade unrelated package and its takes a long time to resolve.
+    To avoid it when add/upgrade single package, change the `pyproject.toml` manually and then execute:
     ```
-    poetry add <python-library>
+    poetry lock --no-update
+    poetry install
     ```
 
 
