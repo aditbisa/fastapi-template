@@ -171,6 +171,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "mariadb"
+version = "1.1.4"
+description = "Python MariaDB extension"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "mypy"
 version = "0.981"
 description = "Optional static typing for Python"
@@ -492,7 +500,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "f603a42224d647accac35a1210b64e875defde6bb8e2501228ddc97b4554ba92"
+content-hash = "ffb7b6a28f8b73fae812bab7e02c1ebd7c363996a45431fd45c76ebc6614ba35"
 
 [metadata.files]
 a2wsgi = []
@@ -547,6 +555,7 @@ iniconfig = [
     {file = "iniconfig-1.1.1-py2.py3-none-any.whl", hash = "sha256:011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"},
     {file = "iniconfig-1.1.1.tar.gz", hash = "sha256:bc3af051d7d14b2ee5ef9969666def0cd1a000e121eaea580d4a313df4b37f32"},
 ]
+mariadb = []
 mypy = []
 mypy-extensions = [
     {file = "mypy_extensions-0.4.3-py2.py3-none-any.whl", hash = "sha256:090fedd75945a69ae91ce1303b5824f428daf5a028d2f6ab8a299250a846f15d"},
