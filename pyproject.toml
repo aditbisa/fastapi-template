@@ -10,6 +10,7 @@ fastapi = "^0.78.0"
 a2wsgi = "^1.4.1"
 python-multipart = "^0.0.5"
 SQLAlchemy = "^1.4.41"
+pydantic = {extras = ["dotenv"], version = "^1.10.2"}
 
 [tool.poetry.dev-dependencies]
 gunicorn = "^20.1.0"
