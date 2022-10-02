@@ -1,7 +1,9 @@
 import sqlalchemy as sa
 from argon2 import PasswordHasher
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import validates
 
-from app.database import Base
+Base = declarative_base()
 
 
 class UserModel(Base):
@@ -11,7 +13,7 @@ class UserModel(Base):
     username = sa.Column("username", sa.String, nullable=False)
     password = sa.Column("password", sa.String, nullable=False)
 
-    @sa.orm.validates("password")
+    @validates("password")
     def _validate_password(self, key, password):
         """
         Hash password using Argon2 as soon as it is assigned.

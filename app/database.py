@@ -1,7 +1,6 @@
 from typing import Generator
 
 from sqlalchemy.engine import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from app.configs import get_db_settings
@@ -36,4 +35,3 @@ def get_db() -> Generator:
 
 engine = create_engine(get_db_url())
 SessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
-Base = declarative_base()
