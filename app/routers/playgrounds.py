@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 
-from app.config import oauth2_scheme
+from app.configs import oauth2_scheme
 
 router = APIRouter(prefix="/playgrounds")
 
