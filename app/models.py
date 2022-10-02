@@ -9,9 +9,9 @@ Base = declarative_base()
 class UserModel(Base):
     __tablename__ = "users"
 
-    id = sa.Column("id", sa.Integer, primary_key=True, autoincrement=True)
-    username = sa.Column("username", sa.String, nullable=False)
-    password = sa.Column("password", sa.String, nullable=False)
+    id = sa.Column("id", sa.BigInteger, primary_key=True, autoincrement=True)
+    username = sa.Column("username", sa.String(50), nullable=False)
+    password = sa.Column("password", sa.String(255), nullable=False)
 
     @validates("password")
     def _validate_password(self, key, password):
