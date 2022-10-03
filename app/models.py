@@ -3,10 +3,12 @@ from argon2 import PasswordHasher
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import validates
 
+# Mypy will complain variables-vs-type-aliases when use Base as class.
+# https://github.com/sqlalchemy/sqlalchemy2-stubs/issues/54
 Base = declarative_base()
 
 
-class UserModel(Base):
+class UserModel(Base):  # type: ignore
     __tablename__ = "users"
 
     id = sa.Column("id", sa.BigInteger, primary_key=True, autoincrement=True)
