@@ -29,6 +29,8 @@ class UserModel(Base):  # type: ignore
         0: for fail,
         1: for sucess and no rehash,
         2: for success with rehash and need session commit.
+
+        Rehash is needed when the Argon2 parameter is changed.
         """
         try:
             ph = PasswordHasher()
