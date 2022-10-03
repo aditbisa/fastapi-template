@@ -11,7 +11,9 @@ Base = declarative_base()
 class UserModel(Base):  # type: ignore
     __tablename__ = "users"
 
-    id = sa.Column("id", sa.BigInteger, primary_key=True, autoincrement=True)
+    id = sa.Column(
+        "id", sa.BigInteger, primary_key=True, autoincrement=True
+    )  # Unsigned in migration with dialect. Behave like normal Integer on the python side.
     username = sa.Column("username", sa.String(50), nullable=False)
     password = sa.Column("password", sa.String(255), nullable=False)
 
