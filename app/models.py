@@ -18,7 +18,7 @@ class UserModel(Base):  # type: ignore
     id = sa.Column(
         "id", sa.BigInteger, primary_key=True, autoincrement=True
     )  # Unsigned in migration with dialect. Behave like normal Integer on the python side.
-    username = sa.Column("username", sa.String(50), nullable=False)
+    username = sa.Column("username", sa.String(50), nullable=False, unique=True)
     password = sa.Column("password", sa.String(255), nullable=False)
 
     @validates("password")
