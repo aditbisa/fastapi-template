@@ -15,7 +15,7 @@ patch.dict(os.environ, envs).start()
 
 from app.database import SessionLocal, engine  # noqa: E402
 from app.main import app  # noqa: E402
-from app.models import Base  # noqa: E402
+from app.models import Base, UserModel  # noqa: E402
 
 
 @pytest.fixture
@@ -41,3 +41,17 @@ def session() -> Generator[Session, None, None]:
     yield session
 
     session.close()
+
+
+@pytest.fixture
+def user_entry(session: Session):
+    """
+    Mock user.
+    """
+    user = UserModel(
+        username="username",
+        password="password",
+    )
+    session.add(user)
+    session.commit()
+    return user
