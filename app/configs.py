@@ -8,7 +8,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 class DbSettings(BaseSettings):
     """
-    Database settings from environment variable (including .env) with prefix.
+    Database settings.
     """
 
     engine: str
@@ -29,3 +29,24 @@ def get_db_settings() -> DbSettings:
     Initialize DbSettings and cache.
     """
     return DbSettings()
+
+
+class JwtSettings(BaseSettings):
+    """
+    JWT settings.
+    """
+
+    secret_key: SecretStr
+    expire_minutes: int
+
+    class Config:
+        env_prefix = "jwt_"
+        env_file = ".env"
+
+
+@lru_cache()
+def get_jwt_settings() -> JwtSettings:
+    """
+    Initialize JwtSettings and cache.
+    """
+    return JwtSettings()
