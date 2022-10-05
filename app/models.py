@@ -47,7 +47,7 @@ class UserModel(Base):  # type: ignore
                 return 2
 
             return 1
-        except Exception:
-            pass
+        except Exception as err:
+            logger.debug(err)
 
         return 0
