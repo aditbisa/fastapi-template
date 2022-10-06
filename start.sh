@@ -4,7 +4,7 @@
 set -e
 
 # DB Migration
-# alembic upgrade head
+alembic upgrade head
 
 # Start Server
 gunicorn app.main_wsgi:wsgi_app --reload
