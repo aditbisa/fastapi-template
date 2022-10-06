@@ -31,12 +31,31 @@
 ## 📦 Packages
 
 - Add new python package into project
-    
+    ```
+    poetry add <package>
+    ```
+
     Poetry tend to upgrade unrelated package and its takes a long time to resolve.
     To avoid it when add/upgrade single package, change the `pyproject.toml` manually and then execute:
     ```
     poetry lock --no-update
     poetry install
+    ```
+
+
+## ⏭ Migrations
+
+- Migration history
+    ```
+    alembic history
+    ```
+- Migrate to latest
+    ```
+    alembic upgrade head
+    ```
+- Reset migration
+    ```
+    alembic downgrade base
     ```
 
 
@@ -47,4 +66,4 @@ To avoid circular dependencies, here's a guide line of the file hierarchy:
 - /utils.py
 - /database.py ; /models.py ; /schemas/*
 - /services/*
-- /routers/*
+- /routers/* ; /middlewares/*
