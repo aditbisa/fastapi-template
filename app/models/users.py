@@ -2,7 +2,7 @@ import logging
 
 import sqlalchemy as sa
 from argon2 import PasswordHasher
-from sqlalchemy.orm import validates
+from sqlalchemy.orm import relationship, validates
 
 from app.database import Base
 
@@ -18,6 +18,9 @@ class UserModel(Base):
     username = sa.Column("username", sa.String(50), nullable=False, unique=True)
     password = sa.Column("password", sa.String(255), nullable=False)
     short_name = sa.Column("short_name", sa.String(20), nullable=False)
+    role_id = sa.Column("role_id", sa.BigInteger, sa.ForeignKey("roles.id"), nullable=True)
+
+    role = relationship("RoleModel", foreign_keys=[role_id])  # type: ignore
 
     @validates("password")
     def _validate_password(self, key, password):
