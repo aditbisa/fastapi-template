@@ -19,8 +19,10 @@ def test_token_endpoint_success(test_client: TestClient, user_entry: UserModel):
     assert resp_json["accessToken"]
     assert resp_json["tokenType"] == "bearer"
 
-    user_id = verify_access_token(resp_json["accessToken"])
-    assert user_id == user_entry.id
+    user_info = verify_access_token(resp_json["accessToken"])
+    assert user_info is not False
+    assert user_info.id == user_entry.id
+    assert user_info.short_name == user_entry.short_name
 
 
 def test_token_endpoint_success_without_oauth2(test_client: TestClient, user_entry: UserModel):
@@ -37,8 +39,10 @@ def test_token_endpoint_success_without_oauth2(test_client: TestClient, user_ent
     assert resp_json["accessToken"]
     assert resp_json["tokenType"] == "bearer"
 
-    user_id = verify_access_token(resp_json["accessToken"])
-    assert user_id == user_entry.id
+    user_info = verify_access_token(resp_json["accessToken"])
+    assert user_info is not False
+    assert user_info.id == user_entry.id
+    assert user_info.short_name == user_entry.short_name
 
 
 def test_token_endpoint_failed(test_client: TestClient):
