@@ -12,6 +12,7 @@ router = APIRouter()
 @router.post(
     "/token",
     response_model=Token,
+    tags=["auth"],
 )
 def login(
     db: Session = Depends(get_db),
