@@ -20,17 +20,17 @@ class AuthMiddleware(BaseHTTPMiddleware):
     async def dispatch(self, request: Request, call_next):
         if request.scope["path"] not in self.exempt_paths and request.scope["method"] != "OPTIONS":
             access_token = await oauth2_scheme(request)
-            user_id = verify_access_token(access_token)
+            user_info = verify_access_token(access_token)
 
-            if not user_id:
+            if not user_info:
                 return JSONResponse(
                     status_code=status.HTTP_401_UNAUTHORIZED,
                     content={"detail": "Could not validate credentials"},
                     headers={"WWW-Authenticate": "Bearer"},
                 )
 
-            # Save user_id in request state
-            request.state.user_id = user_id
+            # Save UserInfo in request state
+            request.state.user_info = user_info
 
         response = await call_next(request)
         return response

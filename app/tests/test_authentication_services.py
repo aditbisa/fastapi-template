@@ -2,6 +2,7 @@ import pytest
 from sqlalchemy.orm import Session
 
 from app.models import UserModel
+from app.schemas.authentications import UserInfo
 from app.services.authentications import (
     authenticate_user,
     create_access_token,
@@ -37,8 +38,9 @@ def test_create_access_token_and_verify_access_token(user_entry: UserModel):
     Test create_access_token and verify_access_token function from services.
     """
     access_token = create_access_token(user_entry)
-    user_id = verify_access_token(access_token)
-    assert user_id == user_entry.id
+    user_info = verify_access_token(access_token)
+    expected_user_info = UserInfo(id=user_entry.id, short_name=user_entry.short_name)
+    assert user_info == expected_user_info
 
 
 @pytest.mark.parametrize(
