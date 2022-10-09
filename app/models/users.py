@@ -2,17 +2,14 @@ import logging
 
 import sqlalchemy as sa
 from argon2 import PasswordHasher
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import validates
+
+from app.database import Base
 
 logger = logging.getLogger(__name__)
 
-# Mypy will complain variables-vs-type-aliases when use Base as class.
-# https://github.com/sqlalchemy/sqlalchemy2-stubs/issues/54
-Base = declarative_base()
 
-
-class UserModel(Base):  # type: ignore
+class UserModel(Base):
     __tablename__ = "users"
 
     id = sa.Column(

@@ -13,9 +13,9 @@ envs = dotenv_values(".env")
 envs.update({"DB_DATABASE": "test_db"})
 patch.dict(os.environ, envs).start()
 
-from app.database import SessionLocal, engine  # noqa: E402
+from app.database import Base, SessionLocal, engine  # noqa: E402
 from app.main import app  # noqa: E402
-from app.models import Base, UserModel  # noqa: E402
+from app.models.users import UserModel  # noqa: E402
 
 
 @pytest.fixture

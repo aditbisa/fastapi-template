@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 
-from app.models import UserModel
+from app.models.users import UserModel
 
 
 def test_user_model(session: Session):

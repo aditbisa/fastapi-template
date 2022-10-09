@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy.orm import Session
 
-from app.models import UserModel
+from app.models.users import UserModel
 from app.schemas.authentications import UserInfo
 from app.services.authentications import (
     authenticate_user,

@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
 from app.middlewares.authentications import AuthMiddleware
-from app.models import UserModel
+from app.models.users import UserModel
 from app.services.authentications import create_access_token
 
 

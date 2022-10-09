@@ -6,7 +6,7 @@ from typing import Literal, Union
 from jose import JWTError, jwt
 
 from app.configs import get_jwt_settings
-from app.models import UserModel
+from app.models.users import UserModel
 from app.schemas.authentications import UserInfo
 
 JWT_ALGORITHM = "HS256"
