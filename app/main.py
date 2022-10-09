@@ -7,7 +7,14 @@ app = FastAPI(
     title="Rest API template",
 )
 app.add_middleware(
-    AuthMiddleware, exempt_paths=["/docs", "/openapi.json", "/redoc", "/healthchecks"]
+    AuthMiddleware,
+    exempt_paths=[
+        "/docs",
+        "/openapi.json",
+        "/redoc",
+        "/healthchecks/readiness",
+        "/token",
+    ],
 )
 app.include_router(authentications.router)
 app.include_router(healtchecks.router)
