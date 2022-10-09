@@ -43,3 +43,15 @@ def test_role_permissions_model(session: Session):
     assert created_role.title == "Store Manager"
     permissions = [p.action for p in created_role.permissions]
     assert set(permissions) == set(["reports.store", "users.manage", "sales.rectify"])
+
+
+def test_user_role(session: Session, user_entry: UserModel):
+    """
+    Test user role.
+    """
+    role = RoleModel(title="role-title")
+    user_entry.role = role
+    session.commit()
+
+    updated_user = session.query(UserModel).one()
+    assert updated_user.role.title == "role-title"
