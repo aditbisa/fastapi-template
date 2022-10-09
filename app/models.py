@@ -20,6 +20,7 @@ class UserModel(Base):  # type: ignore
     )  # Unsigned in migration with dialect. Behave like normal Integer on the python side.
     username = sa.Column("username", sa.String(50), nullable=False, unique=True)
     password = sa.Column("password", sa.String(255), nullable=False)
+    short_name = sa.Column("short_name", sa.String(20), nullable=False)
 
     @validates("password")
     def _validate_password(self, key, password):

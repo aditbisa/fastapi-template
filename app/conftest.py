@@ -51,6 +51,7 @@ def user_entry(session: Session):
     user = UserModel(
         username="username",
         password="password",
+        short_name="short_name",
     )
     session.add(user)
     session.commit()
