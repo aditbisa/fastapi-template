@@ -18,6 +18,7 @@ class UserModel(Base):
     username = sa.Column("username", sa.String(50), nullable=False, unique=True)
     password = sa.Column("password", sa.String(255), nullable=False)
     short_name = sa.Column("short_name", sa.String(20), nullable=False)
+    role_id = sa.Column("role_id", sa.String(25), nullable=True)
 
     @validates("password")
     def _validate_password(self, key, password):
