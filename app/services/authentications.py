@@ -43,7 +43,7 @@ def create_access_token(user: UserModel) -> str:
     """
     jwt_settings = get_jwt_settings()
     expire = datetime.utcnow() + timedelta(minutes=jwt_settings.expire_minutes)
-    user_info = UserInfo(id=user.id, short_name=user.short_name)
+    user_info = UserInfo(id=user.id, short_name=user.short_name, role_id=user.role_id)
     data = {
         "sub": user_info.json(),
         "exp": expire,
