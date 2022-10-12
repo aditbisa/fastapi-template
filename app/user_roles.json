@@ -1,0 +1,27 @@
+{
+    "permissions": [
+        {
+            "action": "reports.all",
+            "description": "View all reports"
+        },
+        {
+            "action": "reports.store",
+            "description": "View store reports"
+        },
+        {
+            "action": "sales.rectify",
+            "description": "Rectify store sales"
+        }
+    ],
+    "roles": [
+        {
+            "id": "store-manager",
+            "name": "Store Manager",
+            "description": "In charge managing store(s).",
+            "permissions": [
+                "reports.store",
+                "sales.rectify"
+            ]
+        }
+    ]
+}

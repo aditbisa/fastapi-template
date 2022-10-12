@@ -1,4 +1,7 @@
+import json
 from functools import lru_cache
+from pathlib import Path
+from typing import Dict
 
 from fastapi.security import OAuth2PasswordBearer
 from pydantic import BaseSettings, SecretStr
@@ -50,3 +53,14 @@ def get_jwt_settings() -> JwtSettings:
     Initialize JwtSettings and cache.
     """
     return JwtSettings()
+
+
+@lru_cache()
+def get_user_roles_config() -> Dict:
+    """
+    Load and cache user roles.
+    """
+    fpath = Path(__file__).parent / "user_roles.json"
+    with fpath.open("r") as file:
+        config = json.load(file)
+    return config
