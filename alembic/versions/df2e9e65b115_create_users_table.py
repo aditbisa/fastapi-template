@@ -24,6 +24,7 @@ def upgrade() -> None:
         sa.Column("username", sa.String(50), nullable=False, unique=True),
         sa.Column("password", sa.String(255), nullable=False),
         sa.Column("short_name", sa.String(20), nullable=False),
+        sa.Column("role", sa.String(25), nullable=True),
         sa.PrimaryKeyConstraint("id"),
     )
 
