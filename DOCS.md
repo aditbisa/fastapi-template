@@ -5,7 +5,12 @@
 
 1. Initialise project
     ```
-    poetry init
+    poetry install
+    ```
+
+2. All command after this need to be executed inside poetry shell
+    ```
+    poetry shell
     ```
 
 2. Install pre-commit hooks
