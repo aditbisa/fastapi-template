@@ -11,6 +11,7 @@ The first go to develop restfull backend using FastAPI.
 - [SQLAlchemy](https://docs.sqlalchemy.org/) for database ORM,
     - [Alembic](https://alembic.sqlalchemy.org/) for database migration,
     - [MariaDb](https://mariadb.com/) the database,
+        - Required [MariaDB Connector/C](https://mariadb.com/docs/skysql/connect/programming-languages/c/install/),
 - [PyTest](https://docs.pytest.org/) for testing,
 - [a2wsgi](https://github.com/abersheeran/a2wsgi) for working with WSGI/passenger server,
     - [Gunicorn](https://gunicorn.org/) for dev server,
