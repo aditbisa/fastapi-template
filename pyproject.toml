@@ -5,10 +5,10 @@ description = ""
 authors = ["Aditya Ghaffar <adit.bisa@gmail.com>"]
 
 [tool.poetry.dependencies]
-python = "~3.9"
-fastapi = "^0.91.0"
+python = "~3.10"
+fastapi = "^0.95.0"
 a2wsgi = "^1.6.0"
-python-multipart = "^0.0.5"
+python-multipart = "^0.0.6"
 sqlalchemy = "^2.0.3"
 pydantic = {extras = ["dotenv"], version = "^1.10.4"}
 mariadb = "^1.1.5.post3"
